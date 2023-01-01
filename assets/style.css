@@ -1,0 +1,36 @@
+* {
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background-color: whitesmoke;
+    padding: 0
+}
+
+#title {
+    font-size: 3em;
+    color: black;
+    margin-top: 10vh;
+    text-align: center;
+}
+
+#description {
+    width: 50vw;
+    margin: auto;
+    font-size: 1.5em;
+}
+
+#button-box {
+    margin-top: 10vh;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+#button-box button {
+    display: flexbox;
+    border: 0.3vh solid black;
+    background-color: whitesmoke;
+
+}
