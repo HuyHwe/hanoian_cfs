@@ -34,3 +34,15 @@ body {
     background-color: whitesmoke;
 
 }
+#textarea{
+    display: flex;
+    justify-content: center;
+    
+}
+#write {
+    font-size: 1em;
+    resize: none;
+    border: 0.3vh solid black;
+    background-color: white;
+    display: none;
+}   
