@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
 const path = require('path');
-__dirname = 'D:/MyWebScript/Cfs/'
+__dirname = '../'
 
 const PORT = process.env.PORT || 5500;
 
