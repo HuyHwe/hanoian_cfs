@@ -18,6 +18,6 @@ app.post('/assets/index/', (req, res, next) => {
 })
 
 
-app.listen(PORT, "127.0.0.1", () => {
+app.listen(PORT, () => {
     console.log('listening to port: ' + PORT);
 })
