@@ -9,11 +9,16 @@
     <link href="style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <h1>Thanks you for letting us share your story!</h1>
+    <h1 class="title">Thanks you for letting us share your story!</h1>
     <div id="button-box">
-        <button id="confess">I want to confess</button>
-        <button id="listen">I want to listen</button>
+        <button id="main-page-button">Back to main page</button>
         
     </div>
 </body>
+<script>
+    const mainPageButton = document.getElementById('main-page-button');
+    mainPageButton.onclick = () => {
+        location.href = "http://127.0.0.1:5500/assets/index";
+    } 
+</script>
 </html>

@@ -4,7 +4,7 @@ const description = document.getElementById("description");
 const title = document.getElementById("title");
 const write = document.getElementById("write");
 const enter = document.getElementById("enter");
-__dirname = 'D:/MyWebScript/Cfs/'
+
 
 confess.addEventListener("click", toConfess);
 listen.addEventListener("click", toListen);
