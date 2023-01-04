@@ -1,13 +1,14 @@
-confess = document.getElementById("confess");
-listen = document.getElementById("listen");
-description = document.getElementById("description");
-title = document.getElementById("title");
-write = document.getElementById("write");
-enter = document.getElementById("enter");
-
+const confess = document.getElementById("confess");
+const listen = document.getElementById("listen");
+const description = document.getElementById("description");
+const title = document.getElementById("title");
+const write = document.getElementById("write");
+const enter = document.getElementById("enter");
+__dirname = 'D:/MyWebScript/Cfs/'
 
 confess.addEventListener("click", toConfess);
 listen.addEventListener("click", toListen);
+
 
 function toConfess() {
     write.style.display = "block";

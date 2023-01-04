@@ -14,7 +14,7 @@ app.get('/assets/index/', (req, res, next) => {
 })
 app.post('/assets/index/', (req, res, next) => {
     console.log(req.body.cfs);
-    res.send("oke")
+    res.sendFile(path.join(__dirname+'assets/thanks.html'));
 })
 
 
