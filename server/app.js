@@ -20,14 +20,14 @@ const client = new Client({
 });
 
 client.connect();
-
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}))
-app.use("/assets", express.static(__dirname + '/assets'));
-app.get('/assets/index/', (req, res, next) => {
+app.use("/", express.static(__dirname + '/assets'));
+app.get('/index/', (req, res, next) => {
     res.sendFile(path.join(__dirname+'assets/index.html'));
 
 })
-app.post('/assets/index/', (req, res, next) => {
+app.post('/index/', (req, res, next) => {
     const cfs = req.body.cfs
     client.query(`INSERT INTO quotes(cfs) VALUES ('${cfs}')`, (error, resolve) => {
         if (error) {
@@ -38,7 +38,29 @@ app.post('/assets/index/', (req, res, next) => {
         }
     })
 })
-
+app.get('/listen', (req, res, next) => {
+    let quote, min, max;
+    client.query(`SELECT MAX(id) FROM quotes`)
+            .then(resolve => {
+                const max = resolve.rows[0].max;
+                client.query(`SELECT MIN(id) FROM quotes`)
+                        .then(resolve => {
+                            const min = resolve.rows[0].min;
+                            const dif = max - min;
+                            const id = Math.floor(min+Math.random()*dif)
+                            console.log(min,max,dif,id);
+                            client.query(`SELECT cfs FROM quotes WHERE id = ${id}`)
+                                    .then(resolve => {
+                                        res.render('listen', {data: {quote: resolve.rows[0]}});
+                                    })
+                                    .catch(e => console.log(e))
+                        })
+                        .catch(e => console.log(e))
+            })
+            .catch(e => console.log(e))
+    console.log(min, max);
+    
+})
 
 app.listen(PORT, () => {
     console.log('listening to port: ' + PORT);
