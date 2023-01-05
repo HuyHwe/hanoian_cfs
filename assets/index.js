@@ -19,5 +19,5 @@ function toConfess() {
 
 function toListen() {
     listen.onclick = () => {
-        location.href = "http://localhost:5500/listen";
+        location.href = "https://the-hanoian-cfs.herokuapp.com/listen";
 }}
