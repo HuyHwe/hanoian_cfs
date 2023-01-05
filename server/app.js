@@ -28,7 +28,8 @@ app.get('/index/', (req, res, next) => {
 
 })
 app.post('/index/', (req, res, next) => {
-    const cfs = req.body.cfs
+    let cfs = `${req.body.cfs}`;
+    cfs = cfs.replaceAll(`'`, `''`);
     client.query(`INSERT INTO quotes(cfs) VALUES ('${cfs}')`, (error, resolve) => {
         if (error) {
             console.log(error);
@@ -58,7 +59,7 @@ app.get('/listen', (req, res, next) => {
                         .catch(e => console.log(e))
             })
             .catch(e => console.log(e))
-    console.log(min, max);
+    
     
 })
 

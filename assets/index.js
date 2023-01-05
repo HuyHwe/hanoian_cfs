@@ -19,5 +19,5 @@ function toConfess() {
 }
 
 function toListen() {
-
+    
 }
