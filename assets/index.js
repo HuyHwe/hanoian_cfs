@@ -20,4 +20,5 @@ function toConfess() {
 function toListen() {
     listen.onclick = () => {
         location.href = "https://the-hanoian-cfs.herokuapp.com/listen";
-}}
+    }
+}

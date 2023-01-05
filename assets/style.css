@@ -68,11 +68,12 @@ body {
 }
 
 #cfs{
+    color: whitesmoke;
     margin: 0 auto;
     text-align: center;
     font-size: x-large;
     width: 60vw;
-    word-wrap: normal;
+    word-wrap: break-word;
+    transition: color 1s ease ;
 }
-
 
