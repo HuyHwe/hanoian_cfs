@@ -1,5 +1,6 @@
 * {
     font-family: 'Playfair Display', serif;
+    word-wrap: normal;
 }
 
 body {
@@ -67,6 +68,7 @@ body {
 }
 
 #cfs{
+    margin-top: 10vh;
     text-align: center;
     font-size: x-large;
 }

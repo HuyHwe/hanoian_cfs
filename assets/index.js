@@ -5,7 +5,6 @@ const title = document.getElementById("title");
 const write = document.getElementById("write");
 const enter = document.getElementById("enter");
 
-
 confess.addEventListener("click", toConfess);
 listen.addEventListener("click", toListen);
 
@@ -19,5 +18,6 @@ function toConfess() {
 }
 
 function toListen() {
-    
-}
+    listen.onclick = () => {
+        location.href = "http://localhost:5500/listen";
+}}

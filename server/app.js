@@ -49,7 +49,6 @@ app.get('/listen', (req, res, next) => {
                             const min = resolve.rows[0].min;
                             const dif = max - min;
                             const id = Math.floor(min+Math.random()*dif)
-                            console.log(min,max,dif,id);
                             client.query(`SELECT cfs FROM quotes WHERE id = ${id}`)
                                     .then(resolve => {
                                         res.render('listen', {data: {quote: resolve.rows[0]}});
