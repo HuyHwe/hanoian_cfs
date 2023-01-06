@@ -77,3 +77,12 @@ body {
     transition: color 1s ease ;
 }
 
+@media screen and (max-width: 992px) {
+    #button-box button {
+        display: flexbox;
+        border: 0.3vh solid black;
+        background-color: whitesmoke;
+        width: 20vw;
+        height: 10vh;
+    }
+}
