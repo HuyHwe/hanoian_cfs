@@ -40,27 +40,16 @@ app.post('/index/', (req, res, next) => {
     })
 })
 app.get('/listen', (req, res, next) => {
-    let quote, min, max;
-    client.query(`SELECT MAX(id) FROM quotes`)
-            .then(resolve => {
-                const max = resolve.rows[0].max;
-                client.query(`SELECT MIN(id) FROM quotes`)
+    client.query(`SELECT id FROM quotes`)
+            .then((resolve) => {
+                const idList = resolve.rows
+                const id = idList[Math.floor(Math.random()*idList.length)].id;
+                client.query(`SELECT cfs FROM quotes WHERE id = ${id}`)
                         .then(resolve => {
-                            const min = resolve.rows[0].min;
-                            const dif = max - min;
-                            const id = Math.floor(min+Math.random()*dif)
-                            client.query(`SELECT cfs FROM quotes WHERE id = ${id}`)
-                                    .then(resolve => {
-                                        console.log(resolve.rows[0]);
-                                        res.render('listen', {data: {quote: resolve.rows[0]}});
-                                    })
-                                    .catch(e => console.log(e))
+                            res.render('listen', {data: {quote: resolve.rows[0]}});
                         })
                         .catch(e => console.log(e))
             })
-            .catch(e => console.log(e))
-    
-    
 })
 
 app.listen(PORT, () => {
