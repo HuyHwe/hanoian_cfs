@@ -46,7 +46,7 @@ app.get('/listen', (req, res, next) => {
                 const id = idList[Math.floor(Math.random()*idList.length)].id;
                 client.query(`SELECT cfs FROM quotes WHERE id = ${id}`)
                         .then(resolve => {
-                            res.render('listen', {data: {quote: resolve.rows[0]}});
+                            res.render('listen', {data: {quote: resolve.rows[0], id: id}});
                         })
                         .catch(e => console.log(e))
             })

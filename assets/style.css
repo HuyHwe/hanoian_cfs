@@ -77,6 +77,10 @@ body {
     transition: color 1s ease ;
 }
 
+h2.title {
+    font-size: 2em;
+    margin-top: 4vh;
+}
 @media screen and (max-width: 992px) {
     #button-box button {
         display: flexbox;
