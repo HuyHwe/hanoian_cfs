@@ -4,15 +4,15 @@ const bodyParser = require('body-parser')
 const path = require('path');
 const {Client} = require('pg');
 const e = require('express');
-
+require('dotenv').config();
 __dirname += "/../"
 const PORT = process.env.PORT || 5500;
 const client = new Client({
-    host: "ec2-44-194-4-127.compute-1.amazonaws.com",
-    user: "ggfuetdphnkznr",
-    port: 5432,
-    password: "26a4000dd4191d1641d11d963309f1717fc5e16d6e5bd78ce32a37a66aaeed2b",
-    database: "dbvf991ujkjv9e",
+    host: process.env.HOST,
+    user: process.env.USER,
+    port: process.env.PORT,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
     ssl: {
         require: true, // This will help you. But you will see new error
         rejectUnauthorized: false // This line will fix new error
