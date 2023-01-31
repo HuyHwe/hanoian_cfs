@@ -11,10 +11,10 @@ const connectionString = process.env.DATABASE_URL
 
 const client = new Client({
     connectionString,
-    // ssl: {
-    //     require: true, // This will help you. But you will see new error
-    //     rejectUnauthorized: false // This line will fix new error
-    //   }
+    ssl: {
+        require: true, // This will help you. But you will see new error
+        rejectUnauthorized: false // This line will fix new error
+      }
 });
 
 client.connect();
