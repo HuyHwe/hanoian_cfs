@@ -7,16 +7,14 @@ const e = require('express');
 require('dotenv').config();
 __dirname += "/../"
 const PORT = process.env.PORT || 5500;
+const connectionString = process.env.DATABASE_URL
+
 const client = new Client({
-    host: process.env.HOST,
-    user: process.env.USER,
-    port: process.env.PORT,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-    ssl: {
-        require: true, // This will help you. But you will see new error
-        rejectUnauthorized: false // This line will fix new error
-      }
+    connectionString,
+    // ssl: {
+    //     require: true, // This will help you. But you will see new error
+    //     rejectUnauthorized: false // This line will fix new error
+    //   }
 });
 
 client.connect();
